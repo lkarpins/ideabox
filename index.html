@@ -17,16 +17,42 @@
   </nav>
   <main class="box-wrapper">
     <form>
-      <label for="form-title">Title</label>
-      <input type="text" name="form-title" id="form-title">
-      <label for="form-body">Body</label>
-      <input type="text" name="form-body" id="form-body">
-      <button class="save-button">Save</button>
-      <label for="search-box"></label>
-      <input type="text" name="search-box" id="search-box" placeholder="Search ideas"/>
-      <img src= "assets/search.svg" class="search-image" alt="search magnifying box"></img>
+      <div class= main-div>
+        <div class=div-title>
+          <label for="form-title">Title</label>
+          <input type="text" name="form-title" id="form-title">
+        </div>
+        <div class=div-form>
+          <label for="form-body">Body</label>
+          <input type="text" name="form-body" id="form-body">
+        </div>
+        <button class="save-button">Save</button>
+        <label for="search-box"></label>
+        <div class= search-box-area>
+          <img src= "assets/search.svg" class="search-image" alt="search magnifying box"></img>
+          <input type="text" name="search-box" id="search-box" placeholder="Search ideas"/>
+        </div>
+      </div>
     </form>
-    <section class="starred-idea-cards hidden">
+    <section class="starred-idea-cards">
+        <div class="card-wrap">
+          <div class="card-header">
+            <img src= "assets/star.svg" class="star-image" alt="star icon"></img>
+            <img src= "assets/star-active.svg" class="star-active-image hidden" alt="favorited star icon"></img>
+            <img src= "assets/delete.svg" class="delete" alt="delete icon"></img>
+            <img src= "assets/delete-active.svg" class="delete-active hidden" alt="deleted red icon"></img>
+          </div>
+          <div class="card-body">
+              <p class="title">Title</p>
+              <p class="idea-body">Ideas go here</p>
+          </div>
+          <div class="card-footer">
+            <img src= "assets/comment.svg" class="comment" alt="add comment icon"></img>
+            <p>Comment</p>
+        </div>
+      </div>
+    </div>
+    </div>
     </section>
   </main>
   <script src="./src/Idea.js"></script>
