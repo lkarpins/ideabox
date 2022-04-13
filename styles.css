@@ -99,6 +99,10 @@ section{
   height: 60vh;
   width: 100vw;
   margin-left: 1px;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
 }
 
 .save-button {
@@ -151,7 +155,6 @@ img {
   font-weight: bold;
   margin: 20px;
   width: 250px;
-  flex-wrap: wrap;
   border: 2px solid #1F1F3D;
 }
 
