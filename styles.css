@@ -58,7 +58,7 @@ hr {
   border-radius: 1px;
   margin: 15px 10px 15px 10px;
   padding: 8px 0px 4px 20px;
-  border: none;
+  border: 1.75px solid #5356A4;
 }
 
 
@@ -73,6 +73,7 @@ form {
   background-color: #A9AAD2;
   font-family: 'Open Sans';
   font-weight: bold;
+  color: #1F1F3D;
   align-items: center;
   height: 40vh;
   width: 100vw;
@@ -84,6 +85,7 @@ form {
 input {
   height: 30px;
   width: 300px;
+  border: 1.75px solid #5356A4;
 }
 
 #form-body {
@@ -106,7 +108,7 @@ section{
   margin: 15px 10px 15px 10px;
   height: 40px;
   width: 310px;
-
+  border: 1.75px solid #5356A4;
 }
 
 img {
@@ -126,6 +128,7 @@ img {
 #search-box{
   height: 30px;
   width: 270px;
+  border: 1.75px solid #5356A4;
 }
 
 .main{
