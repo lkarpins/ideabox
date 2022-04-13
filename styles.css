@@ -179,10 +179,14 @@ img {
   align-items: center;
   height: 35px;
   color: #E9E9F3;
-  background-color: #1F1F3D;
+  background-color: #5356A4;
 }
 
 
 .hidden{
   display: none!important;
+}
+
+.comment{
+  background-color: #5356A4;
 }
