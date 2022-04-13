@@ -65,38 +65,38 @@ hr {
 .box-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
   height: 100vh;
   width: 100vw;
 }
 
 form {
   background-color: #A9AAD2;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  align-items: center;
   height: 40vh;
   width: 100vw;
   display: flex;
-  flex-direction: column;
-
   justify-content: space-evenly;
+  margin-left: 1px;
 }
 
 input {
-
   height: 30px;
-  width: 200px;
+  width: 300px;
 }
 
 #form-body {
   height: 60px;
-  width: 200px;
+  width: 300px;
 }
 
 
 section{
-  border: 2px solid blue;
   background-color: #EAEAF4;
   height: 60vh;
   width: 100vw;
+  margin-left: 1px;
 }
 
 .save-button {
@@ -104,14 +104,82 @@ section{
   color: #E9E9F3;
   border-radius: 1px;
   margin: 15px 10px 15px 10px;
-  padding: 8px 0px 4px 20px;
-  height: 30px;
-  width: 200px;
+  height: 40px;
+  width: 310px;
 
 }
+
 img {
   background-color: #1F1F3D;
   padding: 5px;
   height: 25px;
   width: 25px;
+}
+
+.search-box-area{
+  display: flex;
+}
+.div-title, .div-form {
+  display: flex;
+  flex-direction: column;
+}
+#search-box{
+  height: 30px;
+  width: 270px;
+}
+
+.main{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.main-div{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  left: -10%;
+}
+
+.card-wrap {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  margin: 20px;
+  width: 250px;
+  flex-wrap: wrap;
+  border: 2px solid #1F1F3D;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  height: 35px;
+  background-color: #1F1F3D;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.card-body {
+  color: #1F1F3D;
+  font-weight: lighter;
+  font-size: 18px;
+  height: 200px;
+  padding: 10px;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  height: 35px;
+  color: #E9E9F3;
+  background-color: #1F1F3D;
+}
+
+
+.hidden{
+  display: none!important;
 }
