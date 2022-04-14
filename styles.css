@@ -15,7 +15,7 @@ saved button background color: #5356A4
 
 body{
   display: flex;
-  overflow: hidden;
+  overflow: scroll;
   margin: 0;
 }
 
@@ -24,7 +24,7 @@ nav {
   display: flex;
   align-items: left;
   flex-direction: column;
-  height: 100vh;
+  height: 120pc;
   font-family: "Open Sans";
   font-size: 20px;
   font-weight: bold;
@@ -99,10 +99,11 @@ section{
   height: 60vh;
   width: 100vw;
   margin-left: 1px;
-  display: flex;
   align-items: flex-start;
-  flex-wrap: wrap;
-
+  /* flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
 }
 
 .save-button {
