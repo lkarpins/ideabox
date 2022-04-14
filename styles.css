@@ -116,6 +116,12 @@ section{
   cursor: pointer;
 }
 
+.disable {
+  background-color: #BFBFDD;
+  color: #1F1F3D;
+  cursor: not-allowed;
+}
+
 img {
   background-color: #1F1F3D;
   padding: 5px;

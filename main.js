@@ -16,6 +16,7 @@ function displayCard(){
   getInputValue()
   createIdeaCard();
   resetForm();
+  checkInput();
 }
 
 function getInputValue(){
@@ -28,6 +29,17 @@ function resetForm() {
   inputUserTitle.value = "";
   inputUserBody.value = "";
 };
+
+function checkInput() {
+  if (inputUserTitle.value != "" && inputUserBody.value != "") {
+    saveButton.classList.remove("disable");
+    saveButton.disabled = false;
+  } else {
+    saveButton.classList.add("disable");
+    saveButton.disabled = true;
+  }
+};
+
 
 function createIdeaCard () {
   displayedIdeaCards.innerHTML = '';

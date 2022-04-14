@@ -20,13 +20,13 @@
       <div class= main-div>
         <div class=div-title>
           <label for="form-title">Title</label>
-          <input type="text" name="form-title" class="form-title">
+          <input type="text" name="form-title" class="form-title" onkeyup="checkInput()">
         </div>
         <div class=div-form>
           <label for="form-body">Body</label>
-          <textarea type="builder-input" rows="5" name="form-body" class="form-body"></textarea>
+          <textarea type="builder-input" rows="5" name="form-body" class="form-body" onkeyup="checkInput()"></textarea>
         </div>
-        <button class="save-button">Save</button>
+        <button class="save-button disable" disabled>Save</button>
         <label for="search-box"></label>
         <div class= search-box-area>
           <img src= "assets/search.svg" class="search-image" alt="search magnifying box"></img>
