@@ -59,8 +59,8 @@ hr {
   margin: 15px 10px 15px 10px;
   padding: 8px 0px 4px 20px;
   border: 1.75px solid #5356A4;
+  cursor: pointer;
 }
-
 
 .box-wrapper {
   display: flex;
@@ -88,11 +88,10 @@ input {
   border: 1.75px solid #5356A4;
 }
 
-#form-body {
+.form-body {
   height: 60px;
   width: 300px;
 }
-
 
 section{
   background-color: #EAEAF4;
@@ -114,6 +113,13 @@ section{
   height: 40px;
   width: 310px;
   border: 1.75px solid #5356A4;
+  cursor: pointer;
+}
+
+.disable {
+  background-color: #BFBFDD;
+  color: #1F1F3D;
+  cursor: not-allowed;
 }
 
 img {
@@ -126,11 +132,13 @@ img {
 .search-box-area{
   display: flex;
 }
+
 .div-title, .div-form {
   display: flex;
   flex-direction: column;
 }
-#search-box{
+
+.search-box{
   height: 30px;
   width: 270px;
   border: 1.75px solid #5356A4;
@@ -186,11 +194,10 @@ img {
   background-color: #5356A4;
 }
 
-
-.hidden{
-  display: none!important;
-}
-
 .comment{
   background-color: #5356A4;
+}
+
+.hidden{
+  display: none;
 }
