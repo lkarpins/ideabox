@@ -3,12 +3,15 @@ var saveButton = document.querySelector(".save-button");
 var inputUserTitle = document.querySelector(".form-title");
 var inputUserBody = document.querySelector(".form-body");
 var displayedIdeaCards = document.querySelector(".displayed-idea-cards");
+var activeDeleteIcon = document.querySelector(".delete-active");
+
 // Global Variables Go here 👇
 var allIdeas = [];
 var currentIdea;
 
 // event listeners go here 👇
-saveButton.addEventListener ("click", displayCard)
+saveButton.addEventListener ("click", displayCard);
+activeDeleteIcon.addEventListener ("click", deleteIdeaCard);
 
 // functions and event handlers go here 👇
 function displayCard(){
@@ -40,6 +43,23 @@ function checkInput() {
   }
 };
 
+function deleteIdeaCard(id) {
+  for (var i = 0; i < allIdeas.length; i++)
+  if (id === allIdeas[i].id)
+    allIdeas.splice(id, 1);
+
+  // for (var i = 0; i < allIdeas.length; i++)
+  // if (allIdeas[i].id) {
+  //   //.splice at [i], 1
+  }
+}
+
+function getElementIdAndClass(event) {
+  var id = event.target.id;
+  var itemClass = event.target.className;
+  console.log(event);
+
+}
 
 function createIdeaCard () {
   displayedIdeaCards.innerHTML = '';
