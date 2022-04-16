@@ -3,15 +3,14 @@ var saveButton = document.querySelector(".save-button");
 var inputUserTitle = document.querySelector(".form-title");
 var inputUserBody = document.querySelector(".form-body");
 var displayedIdeaCards = document.querySelector(".displayed-idea-cards");
-var activeDeleteIcon = document.querySelector(".delete-active");
 
 // Global Variables Go here 👇
 var allIdeas = [];
 var currentIdea;
 
 // event listeners go here 👇
-saveButton.addEventListener ("click", displayCard);
-activeDeleteIcon.addEventListener ("click", deleteIdeaCard);
+saveButton.addEventListener("click", displayCard);
+displayedIdeaCards.addEventListener("click", getElementIdAndClass);
 
 // functions and event handlers go here 👇
 function displayCard(){
@@ -20,13 +19,12 @@ function displayCard(){
   createIdeaCard();
   resetForm();
   checkInput();
-}
+};
 
 function getInputValue(){
-var userIdeaCard = new Idea(inputUserTitle.value, inputUserBody.value);
-allIdeas.push(userIdeaCard);
-
-}
+  var userIdeaCard = new Idea(inputUserTitle.value, inputUserBody.value);
+  allIdeas.push(userIdeaCard);
+};
 
 function resetForm() {
   inputUserTitle.value = "";
@@ -43,47 +41,45 @@ function checkInput() {
   }
 };
 
-function deleteIdeaCard(id) {
-  for (var i = 0; i < allIdeas.length; i++)
-  if (id === allIdeas[i].id)
-    allIdeas.splice(id, 1);
-
-  // for (var i = 0; i < allIdeas.length; i++)
-  // if (allIdeas[i].id) {
-  //   //.splice at [i], 1
-  }
-}
-
 function getElementIdAndClass(event) {
-  var id = event.target.id;
+  var id = parseInt(event.target.id);
   var itemClass = event.target.className;
-  console.log(event);
 
-}
+  deleteIdeaCard(id);
+};
+
+function deleteIdeaCard(id) {
+  for (var i = 0; i < allIdeas.length; i++) {
+    if (id === allIdeas[i].id) {
+      allIdeas.splice(i, 1);
+    }
+  }
+
+  createIdeaCard();
+};
 
 function createIdeaCard () {
   displayedIdeaCards.innerHTML = '';
-console.log(allIdeas);
+
   for (var i = 0; i < allIdeas.length; i++) {
     displayedIdeaCards.innerHTML += (
       `<div class="card-wrap">
          <div class="card-header">
-           <img src= "assets/star.svg" class="star-image" alt="star icon"></img>
-           <img src= "assets/star-active.svg" class="star-active-image hidden" alt="favorited star icon"></img>
-           <img src= "assets/delete.svg" class="delete" alt="delete icon"></img>
-           <img src= "assets/delete-active.svg" class="delete-active hidden" alt="deleted red icon"></img>
+           <img src= "assets/star.svg" class="star-image" alt="star icon">
+           <img src= "assets/star-active.svg" class="star-active-image hidden" alt="favorited star icon">
+           <img src= "assets/delete.svg" class="delete" id= ${allIdeas[i].id} alt="delete icon">
          </div>
          <div class="card-body">
-            <p class="title">${allIdeas[i].title}<p>
+            <p class="title">${allIdeas[i].title}</p>
             <p class="idea-body">${allIdeas[i].body}</p>
          </div>
          <div class="card-footer">
-          <img src= "assets/comment.svg" class="comment" alt="add comment icon"></img>
+          <img src= "assets/comment.svg" class="comment" alt="add comment icon">
           <p>Comment</p>
          </div>
       </div>`);
   }
-}
+};
 
 
 
