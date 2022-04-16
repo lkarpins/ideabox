@@ -10,7 +10,7 @@ var currentIdea;
 
 // event listeners go here 👇
 saveButton.addEventListener("click", displayCard);
-displayedIdeaCards.addEventListener("click", getElementIdAndClass);
+displayedIdeaCards.addEventListener("click", handleCardEvent);
 
 // functions and event handlers go here 👇
 function displayCard(){
@@ -41,58 +41,60 @@ function checkInput() {
   }
 };
 
-function getElementIdAndClass(event) {
-  var id = parseInt(event.target.id);
-  var itemClass = event.target.className;
-
-  deleteIdeaCard(id);
-};
-
-function deleteIdeaCard(id) {
+function deleteIdeaCard(event) {
   for (var i = 0; i < allIdeas.length; i++) {
-    if (id === allIdeas[i].id) {
+    if (parseInt(event.target.parentNode.parentNode.id) === allIdeas[i].id) {
       allIdeas.splice(i, 1);
     }
   }
-
-  createIdeaCard();
 };
+
+function removeHiddenStar(i) {
+  if (allIdeas[i].star === true){
+      return `<img src= "assets/star-active.svg" class="star-active-image" id="activeStarButton" alt="favorited star icon">`
+  } else {
+      return  `<img src= "assets/star.svg" class="star-image" id="starButton" alt="star icon">`
+  }
+}
+
+function favoriteIdeaCard(event) {
+  for (var i = 0; i < allIdeas.length; i++) {
+    if (parseInt(event.target.parentNode.parentNode.id) === allIdeas[i].id && allIdeas[i].star === false) {
+      allIdeas[i].star = !allIdeas[i].star;
+    } else if (parseInt(event.target.parentNode.parentNode.id) === allIdeas[i].id && allIdeas[i].star === true){
+      allIdeas[i].star = false;
+
+    }
+  }
+  createIdeaCard();
+}
+
+function handleCardEvent(event) {
+  if (event.target.id === "deleteButton") {
+        deleteIdeaCard(event);
+  } else if (event.target.id === "starButton"|| event.target.id === "activeStarButton") {
+        favoriteIdeaCard(event);
+  }
+  createIdeaCard();
+}
 
 function createIdeaCard () {
   displayedIdeaCards.innerHTML = '';
-
   for (var i = 0; i < allIdeas.length; i++) {
     displayedIdeaCards.innerHTML += (
-      `<div class="card-wrap">
+      `<div class="card-wrap" id=${allIdeas[i].id}>
          <div class="card-header">
-           <img src= "assets/star.svg" class="star-image" alt="star icon">
-           <img src= "assets/star-active.svg" class="star-active-image hidden" alt="favorited star icon">
-           <img src= "assets/delete.svg" class="delete" id= ${allIdeas[i].id} alt="delete icon">
+           ${removeHiddenStar(i)}
+           <img src= "assets/delete.svg" class="delete" id="deleteButton" alt="delete icon">
          </div>
          <div class="card-body">
-            <p class="title">${allIdeas[i].title}</p>
-            <p class="idea-body">${allIdeas[i].body}</p>
+           <p class="title">${allIdeas[i].title}</p>
+           <p class="idea-body">${allIdeas[i].body}</p>
          </div>
          <div class="card-footer">
-          <img src= "assets/comment.svg" class="comment" alt="add comment icon">
-          <p>Comment</p>
+           <img src= "assets/comment.svg" class="comment" alt="add comment icon">
+           <p>Comment</p>
          </div>
       </div>`);
   }
 };
-
-
-
-
-
-
-
-
-
-
-// function createPoster() {
-//   var userPoster = new Poster(
-//     inputImageUrl.value,
-//     inputTitle.value,
-//     inputQuote.value
-//   );
