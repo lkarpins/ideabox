@@ -1,22 +1,10 @@
-/*
-light purple background: #A9AAD2
-grey background: #EAEAF4
-
-Nav
-dark purple background: #1F1F3D
-font:
-font color: #E9E9F3
-little line color: #353567
-Filter starred ideas font color: #BFBFDD
-starred button font color: #E9E9F3
-saved button background color: #5356A4
-*/
-
-
-body{
+body {
   display: flex;
   overflow: scroll;
+  background-color: #EAEAF4;
   margin: 0;
+  font-family: "Open Sans";
+  font-weight: bold;
 }
 
 nav {
@@ -25,9 +13,7 @@ nav {
   align-items: left;
   flex-direction: column;
   height: 120pc;
-  font-family: "Open Sans";
   font-size: 20px;
-  font-weight: bold;
   color: #E9E9F3;
 }
 
@@ -65,14 +51,10 @@ hr {
 .box-wrapper {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100vw;
 }
 
 form {
   background-color: #A9AAD2;
-  font-family: 'Open Sans';
-  font-weight: bold;
   color: #1F1F3D;
   align-items: center;
   height: 40vh;
@@ -93,16 +75,10 @@ input {
   width: 300px;
 }
 
-section{
-  background-color: #EAEAF4;
-  height: 60vh;
-  width: 100vw;
-  margin-left: 1px;
-  align-items: flex-start;
-  /* flex-wrap: wrap; */
+section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  justify-items: center;
 }
 
 .save-button {
@@ -129,27 +105,28 @@ img {
   width: 25px;
 }
 
-.search-box-area{
+.search-box-area {
   display: flex;
 }
 
-.div-title, .div-form {
+.div-title,
+.div-form {
   display: flex;
   flex-direction: column;
 }
 
-.search-box{
+.search-box {
   height: 30px;
   width: 270px;
   border: 1.75px solid #5356A4;
 }
 
-.main{
+.main {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-.main-div{
+.main-div {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -160,8 +137,6 @@ img {
 .card-wrap {
   display: flex;
   flex-direction: column;
-  font-family: 'Open Sans';
-  font-weight: bold;
   margin: 20px;
   width: 250px;
   border: 2px solid #1F1F3D;
@@ -194,10 +169,13 @@ img {
   background-color: #5356A4;
 }
 
-.comment{
+.comment {
   background-color: #5356A4;
+  cursor: pointer;
 }
 
-/* .hidden{
-  display: none;
-} */
+.star-image,
+.star-active-image,
+.delete {
+  cursor: pointer;
+}
