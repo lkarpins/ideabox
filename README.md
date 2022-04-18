@@ -1,6 +1,6 @@
 # IdeaBox
 
-By: [Amber Bodnar](https://github.com/abodnar1), [Cami Anderson](https://github.com/camianderson), & [Lidia Karpinski](https://github.com/lkarpins)
+By: Amber Bodnar, Cami Anderson, & Lidia Karpinski
 
 ## Table of Contents
 * Introduction
@@ -21,10 +21,13 @@ Don’t you hate when a good idea passes you by? Insert IdeaBox: an application 
 4. In terminal, type 'open index.html' to view project.
 
 ## Technologies
-Ideabox was created with HTML, CSS and JavaScript.  Turing School of Software and Design provided a comp with specified images, colors, and fonts to bring the page to life. Paired programming was used throughout this project to ensure consistency and equal collaboration amongst members. 
+IdeaBox was created with HTML, CSS and JavaScript.  Turing School of Software and Design provided a comp with specified images, colors, and fonts to bring the page to life. Paired programming was used throughout this project to ensure consistency and equal collaboration amongst members. 
 
-Project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-1/ideabox-group-v2.html). To view the deployed site, please visit [here](https://lkarpins.github.io/ideabox/). Below we have included images of the project for reference: ***
- 
+Project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-1/ideabox-group-v2.html). To view the deployed site, please visit [here](https://lkarpins.github.io/ideabox/). Below we have included images of the project for reference: 
+ ![Screen Shot 2022-04-18 at 6 31 13 PM](https://user-images.githubusercontent.com/99596577/163889018-163aceb4-8911-45fd-93e6-e2a60ebca51a.png)
+![Screen Shot 2022-04-18 at 6 25 54 PM](https://user-images.githubusercontent.com/99596577/163889022-48ff9ec3-a34d-4a72-a6b1-35d45b322cd0.png)
+![Screen Shot 2022-04-18 at 6 24 07 PM](https://user-images.githubusercontent.com/99596577/163889029-4fc22346-69cc-4015-80a5-f0ad740c77ee.png)
+
 
 ## Sources
 Varied resources used throughout this project include:  
@@ -45,9 +48,12 @@ We'd like to extend a special Thank You to Dane Anderson and Delilah Rose Necras
 ## Collaborators 
 Amber Bodnar
 * [LinkedIn](https://www.linkedin.com/in/amberbodnar/)
+* [GitHub](https://github.com/abodnar1)
 
 Cami Anderson 
 * [LinkedIn](https://www.linkedin.com/in/camianderson/)
+* [GitHub](https://github.com/camianderson)
 
 Lidia Karpinski 
 * [LinkedIn](https://www.linkedin.com/in/lidia-karpinski)
+* [GitHub](https://github.com/lkarpins)
