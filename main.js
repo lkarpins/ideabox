@@ -1,24 +1,23 @@
-// query selector variables go here 👇
+// Query Selector Variables
 var saveButton = document.querySelector(".save-button");
 var inputUserTitle = document.querySelector(".form-title");
 var inputUserBody = document.querySelector(".form-body");
-var displayedIdeaCards = document.querySelector(".displayed-idea-cards");
+var renderIdeaCards = document.querySelector(".render-idea-cards");
 
-// Global Variables Go here 👇
+// Global Variables
 var allIdeas = [];
-var currentIdea;
 
-// event listeners go here 👇
+// Event Listeners
 saveButton.addEventListener("click", displayCard);
-displayedIdeaCards.addEventListener("click", handleCardEvent);
+renderIdeaCards.addEventListener("click", handleCardEvent);
 
-// functions and event handlers go here 👇
+// Functions and Event Handlers
 function displayCard(){
   event.preventDefault();
-  getInputValue()
+  getInputValue();
   createIdeaCard();
   resetForm();
-  checkInput();
+  enableSaveButton();
 };
 
 function getInputValue(){
@@ -26,65 +25,13 @@ function getInputValue(){
   allIdeas.push(userIdeaCard);
 };
 
-function resetForm() {
-  inputUserTitle.value = "";
-  inputUserBody.value = "";
-};
-
-function checkInput() {
-  if (inputUserTitle.value != "" && inputUserBody.value != "") {
-    saveButton.classList.remove("disable");
-    saveButton.disabled = false;
-  } else {
-    saveButton.classList.add("disable");
-    saveButton.disabled = true;
-  }
-};
-
-function deleteIdeaCard(event) {
-  for (var i = 0; i < allIdeas.length; i++) {
-    if (parseInt(event.target.parentNode.parentNode.id) === allIdeas[i].id) {
-      allIdeas.splice(i, 1);
-    }
-  }
-};
-
-function removeHiddenStar(i) {
-  if (allIdeas[i].star === true){
-      return `<img src= "assets/star-active.svg" class="star-active-image" id="activeStarButton" alt="favorited star icon">`
-  } else {
-      return  `<img src= "assets/star.svg" class="star-image" id="starButton" alt="star icon">`
-  }
-}
-
-function favoriteIdeaCard(event) {
-  for (var i = 0; i < allIdeas.length; i++) {
-    if (parseInt(event.target.parentNode.parentNode.id) === allIdeas[i].id && allIdeas[i].star === false) {
-      allIdeas[i].star = !allIdeas[i].star;
-    } else if (parseInt(event.target.parentNode.parentNode.id) === allIdeas[i].id && allIdeas[i].star === true){
-      allIdeas[i].star = false;
-
-    }
-  }
-  createIdeaCard();
-}
-
-function handleCardEvent(event) {
-  if (event.target.id === "deleteButton") {
-        deleteIdeaCard(event);
-  } else if (event.target.id === "starButton"|| event.target.id === "activeStarButton") {
-        favoriteIdeaCard(event);
-  }
-  createIdeaCard();
-}
-
 function createIdeaCard () {
-  displayedIdeaCards.innerHTML = '';
+  renderIdeaCards.innerHTML = '';
   for (var i = 0; i < allIdeas.length; i++) {
-    displayedIdeaCards.innerHTML += (
+    renderIdeaCards.innerHTML += (
       `<div class="card-wrap" id=${allIdeas[i].id}>
          <div class="card-header">
-           ${removeHiddenStar(i)}
+           ${enableFavoriteStar(i)}
            <img src= "assets/delete.svg" class="delete" id="deleteButton" alt="delete icon">
          </div>
          <div class="card-body">
@@ -96,5 +43,56 @@ function createIdeaCard () {
            <p>Comment</p>
          </div>
       </div>`);
+  }
+};
+
+function enableSaveButton() {
+  if (inputUserTitle.value != "" && inputUserBody.value != "") {
+    saveButton.classList.remove("disable");
+    saveButton.disabled = false;
+  } else {
+    saveButton.classList.add("disable");
+    saveButton.disabled = true;
+  }
+};
+
+function resetForm() {
+  inputUserTitle.value = "";
+  inputUserBody.value = "";
+};
+
+function handleCardEvent(event) {
+  if (event.target.id === "deleteButton") {
+        deleteIdeaCard(event);
+  } else if (event.target.id === "starButton"|| event.target.id === "activeStarButton") {
+        favoriteIdeaCard(event);
+  }
+  createIdeaCard();
+};
+
+function deleteIdeaCard(event) {
+  for (var i = 0; i < allIdeas.length; i++) {
+    if (parseInt(event.target.parentNode.parentNode.id) === allIdeas[i].id) {
+      allIdeas.splice(i, 1);
+    }
+  }
+};
+
+function favoriteIdeaCard(event) {
+  for (var i = 0; i < allIdeas.length; i++) {
+    if (parseInt(event.target.parentNode.parentNode.id) === allIdeas[i].id && allIdeas[i].star === false) {
+      allIdeas[i].star = !allIdeas[i].star;
+    } else if (parseInt(event.target.parentNode.parentNode.id) === allIdeas[i].id && allIdeas[i].star === true){
+      allIdeas[i].star = false;
+    }
+  }
+  createIdeaCard();
+};
+
+function enableFavoriteStar(i) {
+  if (allIdeas[i].star === true){
+      return `<img src= "assets/star-active.svg" class="star-active-image" id="activeStarButton" alt="favorited star icon">`;
+  } else {
+      return  `<img src= "assets/star.svg" class="star-image" id="starButton" alt="star icon">`;
   }
 };
